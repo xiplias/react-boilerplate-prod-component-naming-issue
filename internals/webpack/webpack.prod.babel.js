@@ -24,6 +24,12 @@ module.exports = require('./webpack.base.babel')({
     loader: 'css-loader?modules&-autoprefixer&importLoaders=1!postcss-loader',
   }),
 
+  babelQuery: {
+    plugins: [
+      ['babel-plugin-add-react-displayname'],
+    ],
+  },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
